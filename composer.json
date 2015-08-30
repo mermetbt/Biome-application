@@ -1,0 +1,5 @@
+{
+    "require": {
+        "mermetbt/biome": "dev-master"
+    }
+}

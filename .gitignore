@@ -1,0 +1,5 @@
+.bowerrc
+bower.json
+composer.lock
+vendor/
+
