@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<biome:views xmlns:biome="http://github.com/mermetbt/Biome/">
+	<biome:navbar/>
+
+	<biome:view action="index">
+		<span>My DEMO Application !</span>
+		<br/>
+		<a href="../">Test</a>
+	</biome:view>
+</biome:views>

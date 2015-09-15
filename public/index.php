@@ -1,8 +1,16 @@
 <?php
 
+/**
+ * Activate the autoload.
+ */
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use Biome\Biome;
+/**
+ * Load parameters.
+ */
+require_once __DIR__ . '/../app/start.php';
 
-Biome::start();
-
+/**
+ * Start the app!
+ */
+Biome\Biome::start();
