@@ -11,3 +11,6 @@ Biome\Biome::registerDirs(array(
 	'components'	=> __DIR__ . '/components/'
 ));
 
+Biome\Biome::registerAlias(array(
+	'URL'		=> 'Biome\Core\URL',
+));
