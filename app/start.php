@@ -15,3 +15,12 @@ Biome\Biome::registerDirs(array(
 Biome\Biome::registerAlias(array(
 	'URL'		=> 'Biome\Core\URL',
 ));
+
+Biome\Biome::registerService('mysql', function() {
+	$DB = Biome\Core\ORM\Connector\MySQLConnector::getInstance();
+	$DB->setConnectionParameters(array(
+			'hostname' => 'localhost',
+			'username' => 'root',
+			'password' => ''));
+	return $DB;
+});
