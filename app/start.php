@@ -22,5 +22,10 @@ Biome\Biome::registerService('mysql', function() {
 			'hostname' => 'localhost',
 			'username' => 'root',
 			'password' => ''));
+
+	Biome\Biome::setFinal(function() use($DB) {
+		$DB->commit();
+	});
+
 	return $DB;
 });
