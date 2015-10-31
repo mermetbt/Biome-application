@@ -26,12 +26,12 @@ Biome\Biome::registerService('mysql', function() {
 
 // 	$DB->setQueryLogger();
 //
-// 	Biome\Biome::setFinal(function() use($DB) {
-// 		$DB->commit();
+	Biome\Biome::setFinal(function() use($DB) {
+		$DB->commit();
 // 		$queries = $DB->getQueriesLog();
 // 		echo '<pre>';
 // 		print_r($queries);
-// 	});
+	});
 
 	return $DB;
 });
