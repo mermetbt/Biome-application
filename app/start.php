@@ -24,14 +24,14 @@ Biome\Biome::registerService('mysql', function() {
 			'password' => '',
 			'database' => 'biome'));
 
-	$DB->setQueryLogger();
-
-	Biome\Biome::setFinal(function() use($DB) {
-		$DB->commit();
-		$queries = $DB->getQueriesLog();
-		echo '<pre>';
-		print_r($queries);
-	});
+// 	$DB->setQueryLogger();
+//
+// 	Biome\Biome::setFinal(function() use($DB) {
+// 		$DB->commit();
+// 		$queries = $DB->getQueriesLog();
+// 		echo '<pre>';
+// 		print_r($queries);
+// 	});
 
 	return $DB;
 });
