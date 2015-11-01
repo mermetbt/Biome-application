@@ -95,6 +95,10 @@ body {
         width: 225px;
     }
 
+    .side-nav>li>ul>li>a {
+        width: 225px;
+    }
+
     .side-nav li a:hover,
     .side-nav li a:focus {
         outline: none;
