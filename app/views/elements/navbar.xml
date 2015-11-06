@@ -7,7 +7,7 @@
 			<biome:form class="navbar-right">
 				<biome:field value="#{auth.user.mail}" placeholder="Email" label="" error="0"/>
 				<biome:field value="#{auth.user.password}" placeholder="Password" label="" error="0"/>
-				<biome:button class="btn-success" value="Sign in" action="#{auth.login}"/>
+				<biome:button class="btn-success" value="Sign in" action="#{auth.signin}"/>
 			</biome:form>
 		</biome:condition>
 
