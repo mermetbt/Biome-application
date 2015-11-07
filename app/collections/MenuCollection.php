@@ -19,6 +19,11 @@ class MenuCollection extends RequestCollection
 					'title' => 'Dashboard',
 				),
 				array(
+					'url' => URL::fromRoute('showcase'),
+					'icon' => 'fa fa-fw fa-caret-square-o-right ',
+					'title' => 'Showcase',
+				),
+				array(
 					'icon' => 'fa fa-fw fa-wrench',
 					'title' => 'Parameters',
 					'submenu' => array(

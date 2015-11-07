@@ -2,7 +2,7 @@
 
 use Biome\Core\Controller;
 
-class DemoController extends Controller
+class ShowcaseController extends Controller
 {
 	public function getIndex()
 	{

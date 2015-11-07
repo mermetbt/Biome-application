@@ -14,12 +14,17 @@ Biome\Biome::registerDirs(array(
 
 Biome\Biome::registerAlias(array(
 	'URL'		=> 'Biome\Core\URL',
+	'Logger'        => 'Biome\Core\Logger\Logger',
 ));
 
 Biome\Biome::registerService('view', function() {
 	$view = new \Biome\Core\View();
 	$view->setTitle('Biome');
 	return $view;
+});
+
+Biome\Biome::registerService('rights', function() {
+	return new \Biome\Core\Rights\FreeRights();
 });
 
 Biome\Biome::registerService('mysql', function() {
@@ -30,14 +35,8 @@ Biome\Biome::registerService('mysql', function() {
 			'password' => '',
 			'database' => 'biome'));
 
-//	$DB->setQueryLogger();
-
 	Biome\Biome::setFinal(function() use($DB) {
 		$DB->commit();
-//		$queries = $DB->getQueriesLog();
-// 		echo '<pre>';
-//		echo 'Queries:', PHP_EOL;
-//		print_r($queries);
 	});
 
 	return $DB;

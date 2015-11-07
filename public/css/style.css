@@ -167,3 +167,23 @@ body {
 .panel-yellow > a:hover {
     color: #df8a13;
 }
+
+.form-group {
+	margin-bottom: 5px;
+}
+
+.ajaxfield {
+	color: #000;
+}
+
+.ajaxfield:hover {
+	text-decoration: none;
+}
+
+.ajaxfield i {
+	display: none;
+}
+
+.ajaxfield:hover i {
+	display: inline;
+}
