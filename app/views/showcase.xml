@@ -66,6 +66,10 @@
 		<biome:button action="#{showcase.example}" value="Button danger" class="btn-danger"></biome:button>
 		<biome:button action="#{showcase.example}" value="Button info" class="btn-info"></biome:button>
 
+		<biome:title title="Title with button">
+			<biome:button action="#{showcase.example}" class="btn-success"><i class="fa fa-check"></i><span> Success</span></biome:button>
+		</biome:title>
+
 		<h2>Datatable</h2>
 		<biome:datatable value="#{roles.roles}" var="r">
 			<biome:column headerTitle="#">

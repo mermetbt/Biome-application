@@ -27,6 +27,10 @@ Biome\Biome::registerService('rights', function() {
 	return new \Biome\Core\Rights\FreeRights();
 });
 
+// Biome\Biome::registerService('staticcache', function() {
+// 	return new \Biome\Core\Cache\StaticCache(__DIR__ . '/../storage/cache/');
+// });
+
 Biome\Biome::registerService('mysql', function() {
 	$DB = Biome\Core\ORM\Connector\MySQLConnector::getInstance();
 	$DB->setConnectionParameters(array(
