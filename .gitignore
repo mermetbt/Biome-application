@@ -2,4 +2,9 @@ bower.json
 composer.lock
 vendor/
 *.kdev4
-public/packages
+node_modules/
+build/
+public/js
+public/fonts
+public/images
+public/css

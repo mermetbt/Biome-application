@@ -1,5 +1,36 @@
 {
-    "require": {
-        "mermetbt/biome": "dev-master"
-    }
+	"require": {
+		"mermetbt/biome": "dev-master"
+	},
+	"extra": {
+		"require-npm": {
+			"gulp": "*",
+			"gulp-rimraf": "*",
+			"gulp-coffee": "*",
+			"gulp-less": "*",
+			"gulp-sass": "*",
+			"gulp-concat": "*",
+			"gulp-concat-css": "*",
+			"gulp-cssmin": "*",
+			"gulp-postcss": "*",
+			"gulp-rucksack": "*",
+			"gulp-rename": "*",
+			"gulp-uglify": "*",
+			"gulp-include": "*",
+			"precss": "*",
+			"rucksack-css": "*"
+		}
+	},
+	"scripts": {
+		"post-install-cmd": [
+			"gulp"
+		],
+		"post-update-cmd": [
+			"gulp"
+		]
+	},
+	"config": {
+		"preferred-install": "dist"
+	},
+	"minimum-stability": "stable"
 }
