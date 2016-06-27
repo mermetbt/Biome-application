@@ -1,9 +1,5 @@
 <?php
 
-/**
- * Define global environment.
- */
-define('PUBLIC_DIR', __DIR__);
 define('APP_DIR', __DIR__ . '/../');
 
 /**
@@ -16,7 +12,4 @@ require_once __DIR__ . '/../vendor/autoload.php';
  */
 require_once __DIR__ . '/../app/start.php';
 
-/**
- * Start the app!
- */
-Biome\Biome::start();
+\Biome\Biome::tests();
