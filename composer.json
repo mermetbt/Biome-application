@@ -5,6 +5,7 @@
 	"extra": {
 		"require-npm": {
 			"gulp": "*",
+			"gulp-clean": "*",
 			"gulp-rimraf": "*",
 			"gulp-coffee": "*",
 			"gulp-less": "*",
