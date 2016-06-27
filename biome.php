@@ -1,6 +1,8 @@
 #!/usr/bin/env php
 <?php
 
+define('APP_DIR', __DIR__);
+
 /**
  * Activate the autoload.
  */
