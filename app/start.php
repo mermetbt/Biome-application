@@ -16,7 +16,8 @@ Biome\Biome::registerDirs(array(
 
 Biome\Biome::registerAlias(array(
 	'URL'		=> 'Biome\Core\URL',
-	'Logger'        => 'Biome\Core\Logger\Logger',
+	'Logger'	=> 'Biome\Core\Logger\Logger',
+	'Collection' => 'Biome\Core\Collection',
 	'Config'	=> 'Biome\Core\Config\Config'
 ));
 
