@@ -12,18 +12,24 @@ class MenuCollection extends RequestCollection
 	{
 		if(empty($this->sideMenu))
 		{
-			$this->sideMenu = array(
-				array(
-					'url' => URL::fromRoute(),
-					'icon' => 'fa fa-fw fa-dashboard',
-					'title' => 'Dashboard',
-				),
-				array(
+			$menu = array();
+
+			$menu[] = array(
+				'url' => URL::fromRoute(),
+				'icon' => 'fa fa-fw fa-dashboard',
+				'title' => 'Dashboard',
+			);
+
+			$auth = Collection::get('auth');
+			if($auth->isAuthenticated())
+			{
+				$menu[] = array(
 					'url' => URL::fromRoute('showcase'),
 					'icon' => 'fa fa-fw fa-caret-square-o-right ',
 					'title' => 'Showcase',
-				),
-				array(
+				);
+
+				$menu[] = array(
 					'icon' => 'fa fa-fw fa-wrench',
 					'title' => 'Parameters',
 					'submenu' => array(
@@ -38,8 +44,9 @@ class MenuCollection extends RequestCollection
 							'icon' => 'fa fa-fw fa-sitemap',
 						),
 					)
-				),
-			);
+				);
+			}
+			$this->sideMenu = $menu;
 		}
 		return $this->sideMenu;
 	}
