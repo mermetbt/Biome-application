@@ -4,106 +4,107 @@
 	<biome:include src="elements/navbar.xml"/>
 
 	<biome:view action="index">
-		<biome:title title="Showcase"/>
+		<div class="container-fluid">
+			<biome:title title="Showcase"/>
 
-		<h2>Panel</h2>
-		<div class="row">
-			<div class="col-lg-3">
-				<biome:panel class="panel-green">
-					<span>Panel green</span>
-				</biome:panel>
+			<h2>Panel</h2>
+			<div class="row">
+				<div class="col-lg-3">
+					<biome:panel class="panel-green">
+						<span>Panel green</span>
+					</biome:panel>
+				</div>
+				<div class="col-lg-3">
+					<biome:panel class="panel-red">
+						<span>Panel red</span>
+					</biome:panel>
+				</div>
+				<div class="col-lg-3">
+					<biome:panel class="panel-yellow">
+						<span>Panel yellow</span>
+					</biome:panel>
+				</div>
+				<div class="col-lg-3">
+					<biome:panel>
+						<span>Default color</span>
+					</biome:panel>
+				</div>
 			</div>
-			<div class="col-lg-3">
-				<biome:panel class="panel-red">
-					<span>Panel red</span>
-				</biome:panel>
+
+			<h2>Panel with title</h2>
+			<div class="row">
+				<div class="col-lg-3">
+					<biome:panel class="panel-green" title="Panel green">
+						<span>Panel green</span>
+					</biome:panel>
+				</div>
+				<div class="col-lg-3">
+					<biome:panel class="panel-red" title="Panel red">
+						<span>Panel red</span>
+					</biome:panel>
+				</div>
+				<div class="col-lg-3">
+					<biome:panel class="panel-yellow" title="Panel yellow">
+						<span>Panel yellow</span>
+					</biome:panel>
+				</div>
+				<div class="col-lg-3">
+					<biome:panel title="Default panel">
+						<span>Default color</span>
+					</biome:panel>
+				</div>
 			</div>
-			<div class="col-lg-3">
-				<biome:panel class="panel-yellow">
-					<span>Panel yellow</span>
-				</biome:panel>
+
+			<h2>Well component</h2>
+			<div class="well">
+				Well from bootstrap
 			</div>
-			<div class="col-lg-3">
-				<biome:panel>
-					<span>Default color</span>
-				</biome:panel>
-			</div>
-		</div>
 
-		<h2>Panel with title</h2>
-		<div class="row">
-			<div class="col-lg-3">
-				<biome:panel class="panel-green" title="Panel green">
-					<span>Panel green</span>
-				</biome:panel>
-			</div>
-			<div class="col-lg-3">
-				<biome:panel class="panel-red" title="Panel red">
-					<span>Panel red</span>
-				</biome:panel>
-			</div>
-			<div class="col-lg-3">
-				<biome:panel class="panel-yellow" title="Panel yellow">
-					<span>Panel yellow</span>
-				</biome:panel>
-			</div>
-			<div class="col-lg-3">
-				<biome:panel title="Default panel">
-					<span>Default color</span>
-				</biome:panel>
-			</div>
-		</div>
+			<h2>Button</h2>
+			<biome:button action="#{showcase.example}" value="Button default"></biome:button>
+			<biome:button action="#{showcase.example}" value="Button success" class="btn-success"></biome:button>
+			<biome:button action="#{showcase.example}" value="Button warning" class="btn-warning"></biome:button>
+			<biome:button action="#{showcase.example}" value="Button danger" class="btn-danger"></biome:button>
+			<biome:button action="#{showcase.example}" value="Button info" class="btn-info"></biome:button>
 
-		<h2>Well component</h2>
-		<div class="well">
-			Well from bootstrap
-		</div>
+			<biome:title title="Title with button">
+				<biome:button action="#{showcase.example}" class="btn-success"><i class="fa fa-check"></i><span> Success</span></biome:button>
+			</biome:title>
 
-		<h2>Button</h2>
-		<biome:button action="#{showcase.example}" value="Button default"></biome:button>
-		<biome:button action="#{showcase.example}" value="Button success" class="btn-success"></biome:button>
-		<biome:button action="#{showcase.example}" value="Button warning" class="btn-warning"></biome:button>
-		<biome:button action="#{showcase.example}" value="Button danger" class="btn-danger"></biome:button>
-		<biome:button action="#{showcase.example}" value="Button info" class="btn-info"></biome:button>
+			<h2>Datatable</h2>
+			<biome:datatable value="#{roles.roles}" var="r">
+				<biome:column headerTitle="#">
+					<biome:variable value="#{r.role_id}"/>
+				</biome:column>
 
-		<biome:title title="Title with button">
-			<biome:button action="#{showcase.example}" class="btn-success"><i class="fa fa-check"></i><span> Success</span></biome:button>
-		</biome:title>
+				<biome:column headerTitle="Role">
+					<biome:variable value="#{r.role_name}"/>
+				</biome:column>
+			</biome:datatable>
 
-		<h2>Datatable</h2>
-		<biome:datatable value="#{roles.roles}" var="r">
-			<biome:column headerTitle="#">
-				<biome:variable value="#{r.role_id}"/>
-			</biome:column>
+			<h2>Inplace edition</h2>
+			<biome:panel title="Inplace">
+				<biome:ajaxfield value="#{auth.user.firstname}"/>
+				<biome:ajaxfield value="#{auth.user.lastname}"/>
+				<biome:ajaxfield value="#{auth.user.mail}"/>
+			</biome:panel>
 
-			<biome:column headerTitle="Role">
-				<biome:variable value="#{r.role_name}"/>
-			</biome:column>
-		</biome:datatable>
+			<h2>Standard edition</h2>
+			<biome:panel title="Standard">
+				<biome:form>
+					<biome:field value="#{auth.user.firstname}"/>
+					<biome:field value="#{auth.user.lastname}"/>
+					<biome:field value="#{auth.user.mail}"/>
+					<biome:button action="#{user.save}" value="Update" class="btn-success"/>
+				</biome:form>
+			</biome:panel>
 
-		<h2>Inplace edition</h2>
-		<biome:panel title="Inplace">
-			<biome:ajaxfield value="#{auth.user.firstname}"/>
-			<biome:ajaxfield value="#{auth.user.lastname}"/>
-			<biome:ajaxfield value="#{auth.user.mail}"/>
-		</biome:panel>
-
-		<h2>Standard edition</h2>
-		<biome:panel title="Standard">
-			<biome:form>
+			<h2>Standard fields not inside a form</h2>
+			<biome:panel title="Without form">
 				<biome:field value="#{auth.user.firstname}"/>
 				<biome:field value="#{auth.user.lastname}"/>
 				<biome:field value="#{auth.user.mail}"/>
-				<biome:button action="#{user.save}" value="Update" class="btn-success"/>
-			</biome:form>
-		</biome:panel>
-
-		<h2>Standard fields not inside a form</h2>
-		<biome:panel title="Without form">
-			<biome:field value="#{auth.user.firstname}"/>
-			<biome:field value="#{auth.user.lastname}"/>
-			<biome:field value="#{auth.user.mail}"/>
-		</biome:panel>
-
+			</biome:panel>
+		</div>
 	</biome:view>
 </biome:views>
